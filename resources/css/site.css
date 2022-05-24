@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'Calgary Serial';
+    src: url('/storage/app/fonts/calgary_serial-regular-webfont.woff2') format('woff2'),
+    url('/storage/app/fonts/calgary_serial-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@layer base {
+    * {
+        font-family: 'Inter', sans-serif;
+        @apply text-gray-700;
+    }
+}
+
+nav > * {
+    @apply transition-all duration-200;
+}
+
+nav:hover > * {
+    @apply text-white;
+}
+
+nav .logo img:last-of-type {
+    @apply opacity-0;
+}
+
+nav:hover .logo img:first-of-type {
+    @apply opacity-0;
+}
+
+nav:hover .logo img:last-of-type {
+    @apply opacity-100;
+}
+
+nav:hover .social-icon svg > path {
+    @apply opacity-0;
+}
+
+.nav-link {
+    @apply text-2xl hover:text-white font-calgary transition-all duration-200 hover:text-gray-300;
+}
+
+.link {
+    @apply font-bold underline transition-all duration-200 text-gray-700;
+}
+
+.link:hover {
+    @apply text-gray-500;
+}

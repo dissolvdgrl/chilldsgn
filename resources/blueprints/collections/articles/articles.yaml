@@ -1,0 +1,70 @@
+title: Articles
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: content
+        field:
+          type: markdown
+          display: Content
+          localizable: true
+      -
+        handle: author
+        field:
+          type: users
+          display: Author
+          default: current
+          localizable: true
+          max_items: 1
+      -
+        handle: template
+        field:
+          type: template
+          display: Template
+          localizable: true
+      -
+        handle: summary
+        field:
+          input_type: text
+          character_limit: 140
+          append: ...
+          antlers: false
+          display: Summary
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          read_only: false
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: publish_date
+        field:
+          mode: single
+          earliest_date: '2020-03-28'
+          time_enabled: false
+          time_seconds_enabled: false
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          display: 'Publish Date'
+          type: date
+          icon: date
+          listable: hidden
+          instructions_position: above
+          read_only: false
