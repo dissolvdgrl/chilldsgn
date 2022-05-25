@@ -1,8 +1,8 @@
-title: Articles
+title: Projects
 template: default
 layout: layout
 revisions: false
-route: '/articles/{slug}'
+route: '/projects/{slug}'
 sort_dir: desc
 date_behavior:
   past: public

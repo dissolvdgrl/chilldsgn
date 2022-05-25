@@ -1,15 +1,14 @@
 ---
-id: 13ffd1cf-5e14-4352-b94a-b4b8dffa0e35
+id: 6fb9a1b6-3e53-4b85-a2fb-65e561ef6c46
 blueprint: articles
-title: 'It''s about time'
+title: 'It''s About Time'
 author: 4f895e24-73e0-4cb2-9cad-38eb3637860e
-template: default
-updated_by: 4f895e24-73e0-4cb2-9cad-38eb3637860e
-updated_at: 1653418017
 summary: 'I''ve put off building my own personal website for so long'
 publish_date: '2020-03-28'
+updated_by: 4f895e24-73e0-4cb2-9cad-38eb3637860e
+updated_at: 1653507657
 ---
-At the time of purchasing the domain, I was unemployed, looking around for some small freelance projects while embarking on my journey towards a Bachelor of Science Computing degree. I just quit my graphic design job at an advertising company who I worked for many years where I learned valuable lessons as a person and professional. They were great people to work with, but I did not enjoy the stress of agency life (I really miss [[our Friday song](https://www.youtube.com/watch?v=BKdspWe-KdQ)]() and the samoosas). The last few months I worked remotely.
+At the time of purchasing the domain, I was unemployed, looking around for some small freelance projects while embarking on my journey towards a Bachelor of Science Computing degree. I just quit my graphic design job at an advertising company who I worked for many years where I learned valuable lessons as a person and professional. They were great people to work with, but I did not enjoy the stress of agency life (I really miss [our Friday song](https://www.youtube.com/watch?v=BKdspWe-KdQ) and the samoosas). The last few months I worked remotely.
 
 I felt stuck in a routine that wasn't contributing to my mental wellbeing: sleep, sit in traffic, work, eat unhealthy food because I was too busy and tired to cook, sleep, sit in traffic. It felt like a poorly designed while-loop that resulted in a program crash, because it was using all the memory.
 

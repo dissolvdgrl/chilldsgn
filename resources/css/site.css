@@ -48,3 +48,19 @@ nav:hover .social-icon svg > path {
 .link:hover {
     @apply text-gray-500;
 }
+
+.article-content {
+    @apply text-xl mt-16;
+}
+
+.article-content p {
+    @apply mb-8 leading-8;
+}
+
+.article-content a {
+    @apply font-bold underline transition-all duration-200 text-gray-700;
+}
+
+.article-content a:hover {
+    @apply text-gray-500;
+}

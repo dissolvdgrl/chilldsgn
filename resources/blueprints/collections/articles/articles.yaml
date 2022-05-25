@@ -25,12 +25,6 @@ sections:
           localizable: true
           max_items: 1
       -
-        handle: template
-        field:
-          type: template
-          display: Template
-          localizable: true
-      -
         handle: summary
         field:
           input_type: text
