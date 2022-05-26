@@ -1,0 +1,49 @@
+<div class="mx-auto max-w-screen-lg flex flex-col mt-32 w-5/6 lg:w-full">
+    <h1 class="text-5xl font-calgary">Articles</h1>
+    <p class="text-2xl max-w-2xl">Brain dumps, delivered bluntly.</p>
+    <div class="container mx-auto">
+        {{ collection:articles limit="10" as="articles" paginate="true" }}
+        {{ if no_results }}
+        <h2 class="text-3xl italic tracking-tight">Darn, the writings have not materialised yet, check back soon!</h2>
+        {{ /if }}
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {{ articles }}
+            <div class="group mt-32 p-8 shadow-2xl transition-all duration-300 hover:shadow-none hover:bg-gray-700">
+                <p class="mb-4">
+                    <a href="{{ url }}" class="text-3xl link font-calgary group-hover:text-white">
+                        {{ title | widont }}
+                    </a>
+                </p>
+                <p class="group-hover:text-white">
+                    <span class="text-gray-400 text-sm uppercase tracking-widest font-medium">Published on  {{ publish_date }}</span> &mdash;
+                    {{ summary | widont : content | strip_tags | safe_truncate:160:...}}
+                </p>
+            </div>
+            {{ /articles }}
+        </div>
+
+        {{ paginate }}
+
+        <div class="grid grid-cols-3 justify-items-center">
+            {{ if total_pages > 1 }}
+            <span class="text-gray-400 transition-all duration-200 hover:text-gray-800">
+                            {{ if current_page != 1 }}
+                                <a href="{{ prev_page }}">⬅ Previous</a>
+                            {{ /if }}
+                        </span>
+            <span class="text-gray-400">
+                            <span class="font-bold">{{ current_page }}</span> of <span class="font-bold">{{ total_pages }}</span> pages
+                        </span>
+            <span class="text-gray-400 transition-all duration-200 hover:text-gray-800">
+                            {{ if current_page < total_pages }}
+                                <a href="{{ next_page }}">Next ➡</a>
+                            {{ /if }}
+                        </span>
+            {{ /if}}
+        </div>
+        {{ /paginate }}
+
+        {{ /collection:articles }}
+    </div>
+</div>

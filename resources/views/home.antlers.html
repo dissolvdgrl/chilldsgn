@@ -1,14 +1,43 @@
-<div class="mx-auto max-w-screen-lg lg:min-h-screen flex flex-col mt-32">
+<div class="mx-auto max-w-screen-lg flex flex-col mt-32 w-5/6 lg:w-full">
     <h1 class="text-5xl font-calgary">Hello, I'm Christie,</h1>
     <p class="text-2xl max-w-2xl">I build web applications, <a href="https://oracle-rpg.com/" target="_blank" title="Oracle RPG, opens in a new tab" class="link">hack tabletop roleplaying games</a> and <a href="https://bemushroomed.co.za/" title="My mushroom blog, opens in a new tab" class="link" target="_blank">cultivate oyster mushrooms</a>.</p>
 
     <div class="container mx-auto">
-        {{ collection:articles limit="10" as="articles" paginate="true" }}
+        {{ collection:projects limit="3" as="projects" }}
         {{ if no_results }}
         <h2 class="text-3xl italic tracking-tight">Darn, the writings have not materialised yet, check back soon!</h2>
         {{ /if }}
 
-        <div class="grid grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {{ projects }}
+            <div class="group mt-32 shadow-2xl transition-all duration-300 hover:shadow-none hover:bg-gray-700">
+                <img src="{{ thumbnail }}" alt="{{ title }}">
+                <div class="p-4 flex flex-col items-center">
+                    <p class="mb-4 text-center">
+                        <a href="{{ url }}" class="text-3xl link font-calgary group-hover:text-white">
+                            {{ title | widont }}
+                        </a>
+                    </p>
+                    <p class="group-hover:text-white text-center mb-4">
+                        {{ description | widont : content | strip_tags | safe_truncate:60:...}}
+                    </p>
+                    <a href="{{ url }}" class="link text-center group-hover:text-white">Check it out</a>
+                </div>
+            </div>
+            {{ /projects }}
+        </div>
+        <p class="text-center my-8 md:mt-16">
+            <a href="/projects" class="link text-2xl" title="Go to the Articles index page">Find more projects by clicking or tapping on this anchor tag.</a>
+        </p>
+        {{ /collection:projects }}
+    </div>
+    <div class="container mx-auto">
+        {{ collection:articles limit="3" as="articles" }}
+        {{ if no_results }}
+        <h2 class="text-3xl italic tracking-tight">Darn, the writings have not materialised yet, check back soon!</h2>
+        {{ /if }}
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {{ articles }}
             <div class="group mt-32 p-8 shadow-2xl transition-all duration-200 hover:shadow-none hover:bg-gray-700">
                 <p class="mb-4">
@@ -23,28 +52,9 @@
             </div>
             {{ /articles }}
         </div>
-
-        {{ paginate }}
-
-        <div class="grid grid-cols-3 justify-items-center">
-            {{ if total_pages > 1 }}
-                    <span class="text-gray-400 transition-all duration-200 hover:text-gray-800">
-                        {{ if current_page != 1 }}
-                            <a href="{{ prev_page }}">⬅ Previous</a>
-                        {{ /if }}
-                    </span>
-            <span class="text-gray-400">
-                        <span class="font-bold">{{ current_page }}</span> of <span class="font-bold">{{ total_pages }}</span> pages
-                    </span>
-            <span class="text-gray-400 transition-all duration-200 hover:text-gray-800">
-                        {{ if current_page < total_pages }}
-                            <a href="{{ next_page }}">Next ➡</a>
-                        {{ /if }}
-                    </span>
-            {{ /if}}
-        </div>
-        {{ /paginate }}
-
+        <p class="text-center my-8 md:mt-16">
+            <a href="/articles" class="link text-2xl" title="Go to the Articles index page">Find more articles by clicking or tapping on this anchor tag.</a>
+        </p>
         {{ /collection:articles }}
     </div>
 </div>

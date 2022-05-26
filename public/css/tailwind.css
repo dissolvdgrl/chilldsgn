@@ -480,6 +480,10 @@ nav:hover .social-icon svg > path {
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
+.nav-link:hover, nav svg:hover {
+  opacity: 0.7;
+}
+
 .link {
   font-weight: 700;
   --tw-text-opacity: 1;
@@ -583,9 +587,19 @@ nav:hover .social-icon svg > path {
   margin-right: auto;
 }
 
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .mt-8 {
@@ -600,12 +614,24 @@ nav:hover .social-icon svg > path {
   margin-bottom: 1rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
 }
 
-.mt-16 {
-  margin-top: 4rem;
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .inline-block {
@@ -632,6 +658,14 @@ nav:hover .social-icon svg > path {
   height: 1.5rem;
 }
 
+.h-auto {
+  height: auto;
+}
+
+.w-5\/6 {
+  width: 83.333333%;
+}
+
 .w-2 {
   width: 0.5rem;
 }
@@ -648,20 +682,28 @@ nav:hover .social-icon svg > path {
   width: 1.5rem;
 }
 
-.max-w-5xl {
-  max-width: 64rem;
+.w-full {
+  width: 100%;
 }
 
-.max-w-2xl {
-  max-width: 42rem;
+.max-w-5xl {
+  max-width: 64rem;
 }
 
 .max-w-screen-lg {
   max-width: 1024px;
 }
 
+.max-w-2xl {
+  max-width: 42rem;
+}
+
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .grid-cols-3 {
@@ -696,6 +738,15 @@ nav:hover .social-icon svg > path {
   border-radius: 9999px;
 }
 
+.border-t {
+  border-top-width: 1px;
+}
+
+.border-gray-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
 .bg-amber-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(255 251 235 / var(--tw-bg-opacity));
@@ -719,9 +770,8 @@ nav:hover .social-icon svg > path {
   padding: 2rem;
 }
 
-.py-32 {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+.p-4 {
+  padding: 1rem;
 }
 
 .py-2 {
@@ -732,6 +782,20 @@ nav:hover .social-icon svg > path {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .font-calgary {
@@ -747,11 +811,6 @@ nav:hover .social-icon svg > path {
   line-height: 1;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -762,9 +821,19 @@ nav:hover .social-icon svg > path {
   line-height: 2.25rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-medium {
@@ -787,12 +856,12 @@ nav:hover .social-icon svg > path {
   line-height: 1.5;
 }
 
-.tracking-widest {
-  letter-spacing: 0.1em;
-}
-
 .tracking-tight {
   letter-spacing: -0.025em;
+}
+
+.tracking-widest {
+  letter-spacing: 0.1em;
 }
 
 .text-gray-400 {
@@ -850,10 +919,65 @@ nav:hover .social-icon svg > path {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+@media (min-width: 768px) {
+
+  .md\:mt-16 {
+    margin-top: 4rem;
+  }
+
+  .md\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .md\:mb-4 {
+    margin-bottom: 1rem;
+  }
+
+  .md\:block {
+    display: block;
+  }
+
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:items-start {
+    align-items: flex-start;
+  }
+
+  .md\:justify-between {
+    justify-content: space-between;
+  }
+
+  .md\:text-left {
+    text-align: left;
+  }
+}
+
 @media (min-width: 1024px) {
 
-  .lg\:min-h-screen {
-    min-height: 100vh;
+  .lg\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .lg\:w-full {
+    width: 100%;
+  }
+
+  .lg\:w-5\/6 {
+    width: 83.333333%;
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

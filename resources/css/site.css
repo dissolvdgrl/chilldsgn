@@ -41,6 +41,10 @@ nav:hover .social-icon svg > path {
     @apply text-2xl hover:text-white font-calgary transition-all duration-200 hover:text-gray-300;
 }
 
+.nav-link:hover, nav svg:hover {
+    @apply opacity-70;
+}
+
 .link {
     @apply font-bold underline transition-all duration-200 text-gray-700;
 }
