@@ -1,6 +1,6 @@
 <article class="py-32 max-w-2xl mx-auto content w-5/6 lg:w-full">
     <h1 class="text-5xl font-calgary">{{ title }}</h1>
-    <span class="text-gray-400 text-sm uppercase tracking-widest font-medium">Published on  {{ publish_date format="M j, Y" }}</span>
+    <span class="text-gray-400 text-sm uppercase tracking-widest font-medium">Published on  {{ date format="d M Y" }}</span>
     <div class="article-content">
         {{ content | widont }}
     </div>

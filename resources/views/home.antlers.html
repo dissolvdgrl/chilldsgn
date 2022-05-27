@@ -2,7 +2,15 @@
     <h1 class="text-5xl font-calgary">Hello, I'm Christie,</h1>
     <p class="text-2xl max-w-2xl">I build web applications, <a href="https://oracle-rpg.com/" target="_blank" title="Oracle RPG, opens in a new tab" class="link">hack tabletop roleplaying games</a> and <a href="https://bemushroomed.co.za/" title="My mushroom blog, opens in a new tab" class="link" target="_blank">cultivate oyster mushrooms</a>.</p>
 
-    <div class="container mx-auto">
+    <div class="container mx-auto mt-16">
+        <p class="text-2xl">You can get in touch with me by sending a message to work at thisdomain.</p>
+    </div>
+
+    <div class="container mx-auto mt-32">
+        <div class="flex w-full items-center justify-between mb-8">
+            <h2 class="font-calgary text-5xl mb-8">Projects</h2>
+            <div class="h-1 border-t border-gray-500 block w-10/12 p-0.5"></div>
+        </div>
         {{ collection:projects limit="3" as="projects" }}
         {{ if no_results }}
         <h2 class="text-3xl italic tracking-tight">Darn, the writings have not materialised yet, check back soon!</h2>
@@ -10,7 +18,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {{ projects }}
-            <div class="group mt-32 shadow-2xl transition-all duration-300 hover:shadow-none hover:bg-gray-700">
+            <div class="group shadow-2xl transition-all duration-300 hover:shadow-none hover:bg-gray-700">
                 <img src="{{ thumbnail }}" alt="{{ title }}">
                 <div class="p-4 flex flex-col items-center">
                     <p class="mb-4 text-center">
@@ -31,7 +39,11 @@
         </p>
         {{ /collection:projects }}
     </div>
-    <div class="container mx-auto">
+    <div class="container mx-auto mt-32">
+        <div class="flex w-full items-center justify-between mb-8">
+            <h2 class="font-calgary text-5xl mb-8">Articles</h2>
+            <div class="h-1 border-t border-gray-500 block w-10/12 p-0.5"></div>
+        </div>
         {{ collection:articles limit="3" as="articles" }}
         {{ if no_results }}
         <h2 class="text-3xl italic tracking-tight">Darn, the writings have not materialised yet, check back soon!</h2>
@@ -39,14 +51,14 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {{ articles }}
-            <div class="group mt-32 p-8 shadow-2xl transition-all duration-200 hover:shadow-none hover:bg-gray-700">
+            <div class="group p-8 shadow-2xl transition-all duration-200 hover:shadow-none hover:bg-gray-700">
                 <p class="mb-4">
                     <a href="{{ url }}" class="text-3xl link font-calgary group-hover:text-white">
                         {{ title | widont }}
                     </a>
                 </p>
                 <p class="group-hover:text-white">
-                    <span class="text-gray-400 text-sm uppercase tracking-widest font-medium">Published on  {{ publish_date }}</span> &mdash;
+                    <span class="text-gray-400 text-sm uppercase tracking-widest font-medium">Published on {{ date format="d M Y" }}</span> &mdash;
                     {{ summary | widont : content | strip_tags | safe_truncate:160:...}}
                 </p>
             </div>

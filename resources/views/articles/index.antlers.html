@@ -2,7 +2,7 @@
     <h1 class="text-5xl font-calgary">Articles</h1>
     <p class="text-2xl max-w-2xl">Brain dumps, delivered bluntly.</p>
     <div class="container mx-auto">
-        {{ collection:articles limit="10" as="articles" paginate="true" }}
+        {{ collection:articles as="articles" sort_by="publish_date, format="Y-m-d""  }}
         {{ if no_results }}
         <h2 class="text-3xl italic tracking-tight">Darn, the writings have not materialised yet, check back soon!</h2>
         {{ /if }}
@@ -16,33 +16,12 @@
                     </a>
                 </p>
                 <p class="group-hover:text-white">
-                    <span class="text-gray-400 text-sm uppercase tracking-widest font-medium">Published on  {{ publish_date }}</span> &mdash;
+                    <span class="text-gray-400 text-sm uppercase tracking-widest font-medium">Published on {{ date format="d M Y" }}</span> &mdash;
                     {{ summary | widont : content | strip_tags | safe_truncate:160:...}}
                 </p>
             </div>
             {{ /articles }}
         </div>
-
-        {{ paginate }}
-
-        <div class="grid grid-cols-3 justify-items-center">
-            {{ if total_pages > 1 }}
-            <span class="text-gray-400 transition-all duration-200 hover:text-gray-800">
-                            {{ if current_page != 1 }}
-                                <a href="{{ prev_page }}">⬅ Previous</a>
-                            {{ /if }}
-                        </span>
-            <span class="text-gray-400">
-                            <span class="font-bold">{{ current_page }}</span> of <span class="font-bold">{{ total_pages }}</span> pages
-                        </span>
-            <span class="text-gray-400 transition-all duration-200 hover:text-gray-800">
-                            {{ if current_page < total_pages }}
-                                <a href="{{ next_page }}">Next ➡</a>
-                            {{ /if }}
-                        </span>
-            {{ /if}}
-        </div>
-        {{ /paginate }}
 
         {{ /collection:articles }}
     </div>

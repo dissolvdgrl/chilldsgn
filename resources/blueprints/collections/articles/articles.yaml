@@ -46,19 +46,20 @@ sections:
           type: slug
           localizable: true
       -
-        handle: publish_date
+        handle: date
         field:
+          type: date
+          required: true
+          validate:
+            - required
+          display: 'Date created'
+          instructions_position: above
+          listable: true
+          read_only: false
           mode: single
-          earliest_date: '2020-03-28'
           time_enabled: false
           time_seconds_enabled: false
           full_width: false
           inline: false
           columns: 1
           rows: 1
-          display: 'Publish Date'
-          type: date
-          icon: date
-          listable: hidden
-          instructions_position: above
-          read_only: false

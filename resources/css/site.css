@@ -68,3 +68,11 @@ nav:hover .social-icon svg > path {
 .article-content a:hover {
     @apply text-gray-500;
 }
+
+.article-content h2 {
+    @apply mb-2 mt-16 text-2xl;
+}
+
+.article-content h3 {
+    @apply mb-2 mt-16 text-xl;
+}
