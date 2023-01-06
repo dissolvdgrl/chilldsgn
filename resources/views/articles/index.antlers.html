@@ -1,25 +1,23 @@
 <div class="mx-auto max-w-screen-lg flex flex-col mt-32 w-5/6 lg:w-full">
-    <h1 class="text-5xl font-calgary">Articles</h1>
+    <h1 class="text-6xl font-calgary mb-4">Articles</h1>
     <p class="text-2xl max-w-2xl">Brain dumps, delivered bluntly.</p>
-    <div class="container mx-auto">
-        {{ collection:articles as="articles" sort_by="publish_date, format="Y-m-d""  }}
+    <div class="container mx-auto mt-16">
+        {{ collection:articles as="articles" sort_by="publish_date", format="Y-m-d"  }}
         {{ if no_results }}
         <h2 class="text-3xl italic tracking-tight">Darn, the writings have not materialised yet, check back soon!</h2>
         {{ /if }}
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 gap-8">
             {{ articles }}
-            <div class="group mt-32 p-8 shadow-2xl transition-all duration-300 hover:shadow-none hover:bg-gray-700">
-                <p class="mb-4">
-                    <a href="{{ url }}" class="text-3xl link font-calgary group-hover:text-white">
-                        {{ title | widont }}
-                    </a>
+            <a href="{{ url }}" class="group shadow rounded-2xl transition-all duration-300 hover:shadow-xl active:shadow-none p-6 flex flex-col items-start">
+                <p class="mb-4 font-bold text-2xl">
+                    {{ title | widont }}
                 </p>
-                <p class="group-hover:text-white">
+                <p>
                     <span class="text-gray-400 text-sm uppercase tracking-widest font-medium">Published on {{ date format="d M Y" }}</span> &mdash;
                     {{ summary | widont : content | strip_tags | safe_truncate:160:...}}
                 </p>
-            </div>
+            </a>
             {{ /articles }}
         </div>
 

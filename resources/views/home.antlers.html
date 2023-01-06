@@ -1,9 +1,9 @@
 <div class="mx-auto max-w-screen-lg flex flex-col mt-32 w-5/6 lg:w-full">
-    <h1 class="text-5xl font-calgary">Hello, I'm Christie,</h1>
+    <h1 class="text-6xl font-calgary mb-4">Hello, I'm Christie</h1>
     <p class="text-2xl max-w-2xl">I build web applications, <a href="https://oracle-rpg.com/" target="_blank" title="Oracle RPG, opens in a new tab" class="link">hack tabletop roleplaying games</a> and <a href="https://bemushroomed.co.za/" title="My mushroom blog, opens in a new tab" class="link" target="_blank">cultivate oyster mushrooms</a>.</p>
 
     <div class="container mx-auto mt-16">
-        <p class="text-2xl">You can get in touch with me by sending a message to work at thisdomain.</p>
+        <p class="text-2xl">You can get in touch with me by sending a message to work at chilldsgn.com.</p>
     </div>
 
     <div class="container mx-auto mt-32">
@@ -18,24 +18,24 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {{ projects }}
-            <div class="group shadow-2xl transition-all duration-300 hover:shadow-none hover:bg-gray-700">
+            <div class="group shadow rounded-2xl transition-all duration-300 hover:shadow-xl active:shadow-none relative overflow-hidden">
                 <img src="{{ thumbnail }}" alt="{{ title }}">
-                <div class="p-4 flex flex-col items-center">
-                    <p class="mb-4 text-center">
-                        <a href="{{ url }}" class="text-3xl link font-calgary group-hover:text-white">
+                <div class="p-4 flex flex-col">
+                    <p class="mb-4">
+                        <a href="{{ url }}" class="text-2xl font-bold">
                             {{ title | widont }}
                         </a>
                     </p>
-                    <p class="group-hover:text-white text-center mb-4">
+                    <p class="mb-4">
                         {{ description | widont : content | strip_tags | safe_truncate:60:...}}
                     </p>
-                    <a href="{{ url }}" class="link text-center group-hover:text-white">Check it out</a>
+                    <a href="{{ url }}" class="link">Check it out</a>
                 </div>
             </div>
             {{ /projects }}
         </div>
         <p class="text-center my-8 md:mt-16">
-            <a href="/projects" class="link text-2xl" title="Go to the Articles index page">Find more projects by clicking or tapping on this anchor tag.</a>
+            <a href="/projects" class="link text-2xl" title="Go to the Articles index page">Find more projects</a>
         </p>
         {{ /collection:projects }}
     </div>
@@ -46,26 +46,27 @@
         </div>
         {{ collection:articles limit="3" as="articles" }}
         {{ if no_results }}
-        <h2 class="text-3xl italic tracking-tight">Darn, the writings have not materialised yet, check back soon!</h2>
+            <h2 class="text-3xl italic tracking-tight">Darn, the writings have not materialised yet, check back soon!</h2>
         {{ /if }}
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 gap-8">
             {{ articles }}
-            <div class="group p-8 shadow-2xl transition-all duration-200 hover:shadow-none hover:bg-gray-700">
-                <p class="mb-4">
-                    <a href="{{ url }}" class="text-3xl link font-calgary group-hover:text-white">
-                        {{ title | widont }}
-                    </a>
+            <a href="{{ url }}" class="group shadow rounded-2xl transition-all duration-300 hover:shadow-xl active:shadow-none p-6 flex flex-col items-start">
+                <p class="font-bold text-2xl">
+                    {{ title | widont }}
                 </p>
-                <p class="group-hover:text-white">
-                    <span class="text-gray-400 text-sm uppercase tracking-widest font-medium">Published on {{ date format="d M Y" }}</span> &mdash;
+                <p class="mb-4">
+                    <span class="text-gray-400 text-sm uppercase tracking-widest font-medium">Published on {{ date format="d M Y" }}</span>
+                    &mdash;
+                </p>
+                <p>
                     {{ summary | widont : content | strip_tags | safe_truncate:160:...}}
                 </p>
-            </div>
+            </a>
             {{ /articles }}
         </div>
         <p class="text-center my-8 md:mt-16">
-            <a href="/articles" class="link text-2xl" title="Go to the Articles index page">Find more articles by clicking or tapping on this anchor tag.</a>
+            <a href="/articles" class="link text-2xl" title="Go to the Articles index page">Find more articles</a>
         </p>
         {{ /collection:articles }}
     </div>
