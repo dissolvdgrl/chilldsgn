@@ -76,3 +76,19 @@ nav:hover .social-icon svg > path {
 .article-content h3 {
     @apply mb-2 mt-16 text-xl;
 }
+
+blockquote {
+    @apply my-16;
+}
+
+blockquote p{
+    @apply text-5xl text-center font-calgary tracking-wide leading-10 mb-4 !important;
+}
+
+blockquote blockquote {
+    @apply my-0;
+}
+
+blockquote blockquote p {
+     @apply text-base !important;
+}
