@@ -1,4 +1,6 @@
-module.exports = {
+import typography from '@tailwindcss/typography';
+
+export default {
   content: [
     './resources/**/*.antlers.html',
     './resources/**/*.blade.php',
@@ -14,6 +16,6 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
+      typography
   ],
 }

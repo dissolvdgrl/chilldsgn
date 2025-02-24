@@ -1,3 +1,8 @@
+@plugin "@tailwindcss/typography";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
     font-family: 'Calgary Serial';
     src: url('../assets/fonts/calgary_serial-regular-webfont.woff2') format('woff2'),
