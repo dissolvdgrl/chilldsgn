@@ -58,6 +58,8 @@ return [
 
     'asset_url' => env('ASSET_URL', null),
 
+    'og_image_url' => env('APP_URL', 'http://localhost') . '/assets/og-image.jpg',
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
