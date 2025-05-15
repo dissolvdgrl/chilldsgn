@@ -1,5 +1,7 @@
 /node_modules
 /public/hot
+/public/hi
+/public/build/
 /public/storage
 /public/vendor/statamic
 /storage/*.key
