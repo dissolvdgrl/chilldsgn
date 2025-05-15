@@ -13,12 +13,12 @@
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
     </head>
     <body class="font-sans leading-normal bg-amber-50">
-        <div class="bg-blue-900 w-full py-5 px-8 text-center flex items-center justify-between">
+        <div class="bg-blue-900 w-full py-5 px-8 text-center flex flex-col lg:flex-row items-center justify-between">
             <div class="flex items-center">
                 <span class="text-xs text-white mr-2">&rarr;</span>
                 <p class="text-white">Check out my new tiny SaaS: <a href="https://descripto.app" class="font-bold underline" target="_blank">Descripto AI Meta Description Generator</a></p>
             </div>
-            <div class="text-amber-50 py-2 px-4 text-xs flex items-center relative border border-white">
+            <div class="text-amber-50 py-2 px-4 text-xs flex items-center relative border border-white mt-4 lg:mt-0">
                 <div class="absolute bg-orange-500 shadow-xl p-2 text-amber-50 uppercase font-bold -rotate-3 top-8 -right-3 z-20 hover:scale-110 hover:-rotate-1 transition-all duration-300">Random Banger!</div>
                 {{ last_fm:random_banger }}
                     <a href="{{ url }}" target="_blank" class="mr-2 flex gap-2 text-amber-50">
