@@ -75,11 +75,15 @@ nav:hover .social-icon svg > path {
 }
 
 .article-content h2 {
-    @apply mb-2 mt-16 text-2xl;
+    @apply mb-2 mt-16 text-2xl font-bold;
 }
 
 .article-content h3 {
-    @apply mb-2 mt-16 text-xl;
+    @apply mb-2 mt-16 text-xl font-bold;
+}
+
+.article-content pre {
+    @apply mb-6 bg-amber-100 p-4 border border-amber-200;
 }
 
 blockquote {
